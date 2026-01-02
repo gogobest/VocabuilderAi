@@ -1,0 +1,21 @@
+{
+  "name": "Flutter Development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/jarrodcolburn/features/flutter-sdk:0": {}
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code"
+      ]
+    }
+  },
+  
+  "postCreateCommand": "flutter pub get",
+  
+  "forwardPorts": [8080]
+}
