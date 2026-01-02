@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Visual Vocabularies - Learn using images and emojis">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -29,10 +29,100 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>visual_vocabularies</title>
+  <!-- Include local CSS for fonts -->
+  <link rel="stylesheet" href="fonts.css">
+  
+  <!-- Preload Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <title>Visual Vocabularies</title>
   <link rel="manifest" href="manifest.json">
+  
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = null;
+  </script>
+  
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  
+  <style>
+    body {
+      background-color: #673AB7; /* Primary color for splash */
+      height: 100vh;
+      width: 100vw;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      animation: fadeIn 0.5s ease-in;
+    }
+    
+    .app-logo {
+      width: 100px;
+      height: 100px;
+      background-color: #42A5F5;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 72px;
+      color: #E3F2FD;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .app-name {
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 8px;
+    }
+    
+    .app-tagline {
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <div id="loading" class="loading">
+    <div class="app-logo">V</div>
+    <div class="app-name">VocaBuilderAi</div>
+    <div class="app-tagline">Learn, Master, Remember</div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function(ev) {
+      // Download main.dart.js
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            document.getElementById('loading').style.display = 'none';
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
