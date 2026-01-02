@@ -1,4 +1,3 @@
-import 'dart:js' as js;
 
 class ImageCacheService {
   static final ImageCacheService instance = ImageCacheService._();

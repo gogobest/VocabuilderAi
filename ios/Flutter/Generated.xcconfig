@@ -1,5 +1,5 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/workspaces/VocabuilderAi/flutter
+FLUTTER_ROOT=/flutter
 FLUTTER_APPLICATION_PATH=/workspaces/VocabuilderAi
 COCOAPODS_PARALLEL_CODE_SIGN=true
 FLUTTER_TARGET=lib/main.dart

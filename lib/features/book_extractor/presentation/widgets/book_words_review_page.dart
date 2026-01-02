@@ -464,7 +464,7 @@ Include detailed information: definition, example sentence, precise part of spee
             partOfSpeech = result['partOfSpeech'] as String;
             
             // Normalize part of speech format
-            if (partOfSpeech!.isNotEmpty && partOfSpeech != "I") {
+            if (partOfSpeech.isNotEmpty && partOfSpeech != "I") {
               partOfSpeech = partOfSpeech[0].toLowerCase() + partOfSpeech.substring(1);
             }
             

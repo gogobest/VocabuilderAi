@@ -297,11 +297,10 @@ class AppRouter {
 /// A placeholder screen for routes that are not yet implemented
 class _PlaceholderScreen extends StatelessWidget {
   final String title;
-  final String description;
+  final String description = '';
 
   const _PlaceholderScreen({
     required this.title,
-    this.description = 'Coming Soon',
   });
 
   @override
